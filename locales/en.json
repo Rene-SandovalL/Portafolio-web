@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Portfolio | René Sandoval"
+  },
+  "navbar": {
+    "about": "About Me",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I am",
+    "role": "Web Developer",
+    "bio": "Information Technology Engineering student. Specialized in full-stack web development, passionate about learning, and focused on finding technological solutions.",
+    "cv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I am an Information Technology Engineering student with a strong focus on software development and continuous improvement. I am characterized by being proactive, passionate about learning, and committed to excellence in every project. I have experience in system and interface design and development, applying software engineering methodologies to ensure efficient, high-quality solutions."
+  },
+  "projects": {
+    "title": "Projects",
+    "codeBtn": "Code",
+    "previewBtn": "🔗 Preview",
+    "p1": {
+      "title": "BlueShark - Gym Management System",
+      "bio": "Complete system for managing clients, memberships, payments, and attendance at a gym. Includes data analysis and inventory control."
+    },
+    "p2": {
+      "title": "Optiruta",
+      "bio": "Prototype developed in Figma to practice developing clean and intuitive interfaces with reusable components to ensure an excellent UX/UI experience."
+    },
+    "p3": {
+      "title": "Semantic Page - Languages and Automata",
+      "bio": "Informational website that applies semantic HTML tags and responsive design to be viewable on any device."
+    }
+  },
+  "education": {
+    "title": "Education",
+    "academic": {
+      "title": "Academic",
+      "uni": {
+        "title": "Polytechnic University of Sinaloa",
+        "date": "2023 - Present",
+        "bio": "Currently in the seventh semester of the Information Technology Engineering program, specializing in software development, web architectures, and systems administration."
+      }
+    },
+    "certs": {
+      "title": "Certifications",
+      "c1": {
+        "title": "IT Essentials",
+        "date": "August 2024",
+        "bio": "Certification on the fundamentals of hardware, software, networking, cybersecurity, and troubleshooting in IT environments."
+      },
+      "c2": {
+        "title": "C# Programmer",
+        "issuer": "Capacítate para el empleo",
+        "date": "September 2022",
+        "bio": "Course focused on the fundamentals of the C# language and the .NET framework for creating desktop and backend applications."
+      },
+      "c3": {
+        "title": "CCNA: Introduction to networks",
+        "date": "August 2024",
+        "bio": "Introductory certification to CCNA, covering network administration, routing, and interconnection."
+      }
+    },
+    "ongoing": {
+      "title": "In Progress",
+      "c1": {
+        "title": "The Complete 2024 Web Development Bootcamp",
+        "bio": "Learning modern full-stack technologies, including Node.js, React, MongoDB, and Express.js to build complete web applications."
+      }
+    }
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "interests": "Interests",
+    "tools": "Tools"
+  },
+  "footer": {
+    "col1": {
+      "title": "Made with"
+    },
+    "col2": {
+      "title": "Contact Me"
+    },
+    "copyright": "© 2025 Rene Sandoval. Made with love."
+  }
+}

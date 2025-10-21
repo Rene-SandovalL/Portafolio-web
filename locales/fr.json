@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Portfolio | René Sandoval"
+  },
+  "navbar": {
+    "about": "À propos de moi",
+    "projects": "Projets",
+    "education": "Formation",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Web",
+    "bio": "Étudiant en ingénierie des technologies de l'information. Spécialisé dans le développement web full-stack, passionné par l'apprentissage et axé sur la recherche de solutions technologiques.",
+    "cv": "Télécharger CV"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "bio": "Je suis étudiant en Ingénierie des Technologies de l'Information, avec une solide orientation vers le développement de logiciels et l'amélioration continue. Je me caractérise par ma proactivité, ma passion pour l'apprentissage et mon engagement envers l'excellence dans chaque projet. Je possède de l'expérience dans la conception et le développement de systèmes et d'interfaces, en appliquant des méthodologies de génie logiciel pour garantir des solutions efficaces et de qualité."
+  },
+  "projects": {
+    "title": "Projets",
+    "codeBtn": "Code",
+    "previewBtn": "🔗 Aperçu",
+    "p1": {
+      "title": "BlueShark - Système de gestion de salle de sport",
+      "bio": "Système complet pour la gestion des clients, des adhésions, des paiements et des présences dans une salle de sport. Comprend l'analyse de données et le contrôle des stocks."
+    },
+    "p2": {
+      "title": "Optiruta",
+      "bio": "Prototype développé sur Figma, pour mettre en pratique le développement d'interfaces propres et intuitives, avec des composants réutilisables pour assurer une excellente expérience UX/UI."
+    },
+    "p3": {
+      "title": "Page sémantique - Langages et automates",
+      "bio": "Site web informatif qui applique des balises HTML sémantiques et un design réactif pour être visible sur n'importe quel appareil."
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "academic": {
+      "title": "Académique",
+      "uni": {
+        "title": "Université Polytechnique de Sinaloa",
+        "date": "2023 - Aujourd'hui",
+        "bio": "Actuellement en septième semestre du programme d'Ingénierie des Technologies de l'Information, spécialisé dans le développement de logiciels, les architectures web et l'administration de systèmes."
+      }
+    },
+    "certs": {
+      "title": "Certifications",
+      "c1": {
+        "title": "IT Essentials",
+        "date": "Août 2024",
+        "bio": "Certification sur les principes fondamentaux du matériel, des logiciels, des réseaux, de la cybersécurité et du dépannage dans les environnements informatiques."
+      },
+      "c2": {
+        "title": "Programmeur C#",
+        "issuer": "Capacítate para el empleo",
+        "date": "Septembre 2022",
+        "bio": "Cours axé sur les principes fondamentaux du langage C# et du framework .NET pour la création d'applications de bureau et backend."
+      },
+      "c3": {
+        "title": "CCNA: Introduction to networks",
+        "date": "Août 2024",
+        "bio": "Certification d'introduction au CCNA, pour l'administration, le routage et l'interconnexion des réseaux."
+      }
+    },
+    "ongoing": {
+      "title": "En Cours",
+      "c1": {
+        "title": "The Complete 2024 Web Development Bootcamp",
+        "bio": "Apprentissage des technologies full-stack modernes, y compris Node.js, React, MongoDB et Express.js pour créer des applications web complètes."
+      }
+    }
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "interests": "Intérêts",
+    "tools": "Outils"
+  },
+  "footer": {
+    "col1": {
+      "title": "Fait avec"
+    },
+    "col2": {
+      "title": "Contactez-moi"
+    },
+    "copyright": "© 2025 Rene Sandoval. Fait avec amour."
+  }
+}

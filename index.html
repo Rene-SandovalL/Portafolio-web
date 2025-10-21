@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio | Shalking</title>
+    <title data-i18n-key="meta.title">Portafolio | René Sandoval</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+
+    </style>
   </head>
   <body
     class="bg-gradient-to-r from-[#0a0a1a] via-[#0c0c24] to-[#0e0e2e] text-white min-h-screen"
@@ -13,79 +16,96 @@
     <header
       class="sticky top-0 z-50 flex justify-between items-center px-6 md:px-10 py-5 border-b border-gray-800 bg-[#0a0a1a]/80 backdrop-blur-md"
     >
+    <a href="#Inicio">
       <h1 class="text-2xl font-semibold tracking-wide">&lt;Shalking.Dev&gt;</h1>
+    </a>
       
-      <nav class="hidden md:flex space-x-8 text-gray-300">
-        <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
-        <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
-        <a href="#logros" class="hover:text-white transition">Educación</a>
-        <a href="#contacto" class="hover:text-white transition">Contacto</a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-gray-300" >
+        <a href="#sobre-mi" class="hover:text-white transition" data-i18n-key="navbar.about">Sobre mí</a>
+        <a href="#proyectos" class="hover:text-white transition" data-i18n-key="navbar.projects">Proyectos</a>
+        <a href="#logros" class="hover:text-white transition" data-i18n-key="navbar.education">Educación</a>
+        <a href="#contacto" class="hover:text-white transition" data-i18n-key="navbar.contact">Contacto</a>
+        
+        <div class="flex items-center space-x-2 pl-4">
+          <button onclick="setLanguage('es')" class="font-semibold text-white lang-btn" data-lang="es">ES</button>
+          <span class="text-gray-500">|</span>
+          <button onclick="setLanguage('en')" class="text-gray-400 hover:text-white lang-btn" data-lang="en">EN</button>
+          <span class="text-gray-500">|</span>
+          <button onclick="setLanguage('fr')" class="text-gray-400 hover:text-white lang-btn" data-lang="fr">FR</button>
+        </div>
       </nav>
 
-      <button id="menu-btn" class="md:hidden z-50 text-gray-300 hover:text-white" onclick="toggleMenu()">
+      <button
+        id="menu-btn"
+        class="md:hidden z-50 text-gray-300 hover:text-white"
+        onclick="toggleMenu()"
+      >
         <svg id="icon-hamburger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
         </svg>
         <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 hidden">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </header>
 
-    <div 
-      id="mobile-menu" 
-      class="fixed top-0 right-0 z-40 w-64 h-full bg-[#0c0c24] border-l border-gray-800 shadow-lg
-             transform translate-x-full transition-transform duration-300 ease-in-out"
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 z-40 w-64 h-full bg-[#0c0c24] border-l border-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
     >
-      <nav class="flex flex-col p-8 pt-24 space-y-6">
-        <a href="#sobre-mi" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Sobre mí</a>
-        <a href="#proyectos" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Proyectos</a>
-        <a href="#logros" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Educación</a>
-        <a href="#contacto" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Contacto</a>
+      <nav class="flex flex-col p-8 pt-24 space-y-6 text-center">
+        <a href="#sobre-mi" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()" data-i18n-key="navbar.about">Sobre mí</a>
+        <a href="#proyectos" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()" data-i18n-key="navbar.projects">Proyectos</a>
+        <a href="#logros" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()" data-i18n-key="navbar.education">Educación</a>
+        <a href="#contacto" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()" data-i18n-key="navbar.contact">Contacto</a>
+        
+        <div class="flex justify-center space-x-4 pt-6 border-t border-gray-700">
+          <button onclick="setLanguage('es'); toggleMenu();" class="font-semibold text-white lang-btn" data-lang="es">ES</button>
+          <button onclick="setLanguage('en'); toggleMenu();" class="text-gray-400 hover:text-white lang-btn" data-lang="en">EN</button>
+          <button onclick="setLanguage('fr'); toggleMenu();" class="text-gray-400 hover:text-white lang-btn" data-lang="fr">FR</button>
+        </div>
       </nav>
     </div>
 
-    <div id="menu-overlay" class="fixed inset-0 z-30 bg-black/60 hidden" onclick="toggleMenu()"></div>
-
+    <div
+      id="menu-overlay"
+      class="fixed inset-0 z-30 bg-black/60 hidden"
+      onclick="toggleMenu()"
+    ></div>
 
     <section
-      class="hero-animated-bg flex flex-col justify-center items-center px-10 md:px-20 py-32"
+      class="hero-animated-bg flex flex-col justify-center items-center px-10 md:px-20 py-32" id="Inicio"
     >
       <div class="hero-content max-w-xl text-center">
-        <h2 class="text-2xl md:text-3xl text-yellow-400 font-semibold">Hola, soy</h2>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-2">René Sandoval</h1>
-        <h3 class="text-2xl sm:text-4xl md:text-5xl text-yellow-500 font-semibold mt-2">
+        <h2 class="text-2xl md:text-3xl text-yellow-400 font-semibold" data-i18n-key="hero.greeting">
+          Hola, soy
+        </h2>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-2">
+          René Sandoval
+        </h1>
+        <h3 class="text-2xl sm:text-4xl md:text-5xl text-yellow-500 font-semibold mt-2" data-i18n-key="hero.role">
           Desarrollador Web
         </h3>
-
-        <p class="text-gray-300 mt-4 leading-relaxed">
-          Estudiante de ingenieria en tecnologias de la informacion.
+        <p class="text-gray-300 mt-4 leading-relaxed" data-i18n-key="hero.bio">
+          Estudiante de ingeniería en tecnologías de la información.
           Especializado en el desarrollo web fullstack, apasionado del
-          aprendizaje y enfocado en la busqueda de soluciones tecnologicas
+          aprendizaje y enfocado en la búsqueda de soluciones tecnológicas
         </p>
-
         <div class="mt-6 flex items-center justify-center space-x-5">
           <a
             href="resources/CV_SandovalRene.pdf"
             download
             class="border border-gray-500 px-5 py-2 rounded-full hover:bg-teal-500 hover:text-black transition"
+            data-i18n-key="hero.cv"
           >
             Descargar CV
           </a>
-
           <div class="flex space-x-4 text-2xl">
-            <a
-              href="https://www.linkedin.com/in/rene-sandoval-767a05273"
-              target="_blank"
-              class="hover:opacity-80 transition p-2"
-            >
+            <a href="https://www.linkedin.com/in/rene-sandoval-767a05273" target="_blank" class="hover:opacity-80 transition p-2">
               <img src="images/linkedin.svg" alt="linkedin" class="size-6" />
             </a>
-            <a
-              href="https://github.com/Rene-SandovalL"
-              target="_blank"
-              class="hover:opacity-80 transition p-2"
-            >
+            <a href="https://github.com/Rene-SandovalL" target="_blank" class="hover:opacity-80 transition p-2">
               <img src="images/github_dark.svg" alt="github" class="size-6" />
             </a>
           </div>
@@ -93,343 +113,365 @@
       </div>
     </section>
 
-    <section id="proyectos" class="text-white py-20 px-6 md:px-20">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center">
-        <span class="mr-2"></span> Proyectos
-      </h2>
+    <section id="sobre-mi" class="animate-on-scroll">
+      <div
+        class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-10 xl:gap-12 lg:py-16 lg:grid-cols-12"
+      >
+        <div class="flex justify-center items-center mb-8 lg:mt-0 lg:col-span-5 lg:flex order-1 lg:order-2">
+          <img
+            src="/images/imagenFormal.png"
+            alt="Yo"
+            class="rounded-full object-cover border-2 border-gray-200"
+            width="250"
+            height="250"
+          />
+        </div>
+        <div class="mr-auto place-self-center lg:col-span-7 order-2 lg:order-1">
+          <h2 class="max-w-2xl mb-4 text-3xl font-bold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white" data-i18n-key="about.title">
+            Sobre mí
+          </h2>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 text-justify" data-i18n-key="about.bio">
+            Soy estudiante de Ingeniería en Tecnologías de la Información, con
+            una sólida orientación al desarrollo de software y la mejora
+            continua. Me caracterizo por ser una persona proactiva, con pasión
+            por el aprendizaje y compromiso con la excelencia en cada proyecto.
+            Poseo experiencia en el diseño y desarrollo de sistemas e
+            interfaces, aplicando metodologías de ingeniería de software para
+            garantizar soluciones eficientes y de calidad.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <article class="space-y-20">
-        <div class="md:flex md:items-center md:space-x-10">
-          <div class="md:w-1/2">
-            <img
+    <section id="proyectos" class="text-white py-20 px-6 md:px-20 animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center" data-i18n-key="projects.title">
+        Proyectos
+      </h2>
+      
+      <div class="space-y-20">
+        
+        <article class="md:flex md:items-center md:space-x-10 group animate-on-scroll">
+          <div class="md:w-1/2 overflow-hidden rounded-2xl"> <img
               src="images/blueshark.png"
               alt="Vista previa del proyecto 1"
-              class="rounded-2xl shadow-lg w-full"
+              class="rounded-2xl shadow-lg w-full transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
           </div>
           <div class="mt-6 md:mt-0 md:w-1/2">
-            <h3 class="text-2xl font-semibold mb-3">
-              GymFit - Sistema de gestión de gimnasio
+            <h3 class="text-3xl font-semibold mb-3" data-i18n-key="projects.p1.title">
+              BlueShark - Sistema de gestión de gimnasio
             </h3>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Java</span
-              >
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >MySQL</span
-              >
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >JavaFX</span
-              >
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">Java</span>
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">MySQL</span>
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">Java Swing</span>
             </div>
-            <p class="text-gray-300 mb-5">
+            <p class="text-gray-300 mb-5" data-i18n-key="projects.p1.bio">
               Sistema completo para la administración de clientes, membresías,
               pagos y asistencias en un gimnasio. Incluye análisis de datos y
               control de inventario.
             </p>
             <div class="flex gap-4">
-              <a
-                href="#"
-                target="_blank"
-                class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                >Código</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="md:flex md:items-center md:space-x-10">
-          <div class="md:w-1/2">
-            <img
-              src="images/blueshark.png"
-              alt="Vista previa del proyecto 2"
-              class="rounded-2xl shadow-lg w-full"
-            />
-          </div>
-          <div class="mt-6 md:mt-0 md:w-1/2">
-            <h3 class="text-2xl font-semibold mb-3">
-              Proyecto 2 (Cambiar Título)
-            </h3>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Tecnología 1</span
-              >
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Tecnología 2</span
-              >
-            </div>
-            <p class="text-gray-300 mb-5">
-              Descripción del segundo proyecto. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
-            </p>
-            <div class="flex gap-4">
-              <a
-                href="#"
-                target="_blank"
-                class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                >Código</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="md:flex md:items-center md:space-x-10">
-          <div class="md:w-1/2">
-            <img
-              src="images/blueshark.png"
-              alt="Vista previa del proyecto 3"
-              class="rounded-2xl shadow-lg w-full"
-            />
-          </div>
-          <div class="mt-6 md:mt-0 md:w-1/2">
-            <h3 class="text-2xl font-semibold mb-3">
-              Proyecto 3 (Cambiar Título)
-            </h3>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Tecnología 1</span
-              >
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Tecnología 2</span
-              >
-              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
-                >Tecnología 3</span
-              >
-            </div>
-            <p class="text-gray-300 mb-5">
-              Descripción del tercer proyecto. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
-            </p>
-            <div class="flex gap-4">
-              <a
-                href="#"
-                target="_blank"
-                class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                >Código</a
-              >
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="text-gray-200 p-8 md:p-12 font-sans">
-      <h2 class="text-2xl md:text-3xl font-bold flex items-center mb-10 md:mb-12">
-        <span class="ml-4">Educación</span>
-      </h2>
-
-      <div class="relative border-l-2 border-gray-700 ml-3">
-        <div class="mb-12 relative pl-8 md:pl-10">
-          <div
-            class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"
-          ></div>
-
-          <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
-            <div class="md:col-span-1">
-              <h3 class="text-lg md:text-xl font-semibold text-yellow-400">
-                Creador de Contenido
-              </h3>
-              <p class="text-gray-300">Twitch</p>
-              <p class="text-sm text-gray-400">Actualmente...</p>
-            </div>
-
-            <div class="md:col-span-2">
-              <p class="text-gray-300 leading-relaxed">
-                Divulgo sobre programación y desarrollo web en diferentes
-                plataformas. Galardonado como mejor creador de contenido de habla
-                no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.
-              </p>
-              <a
-                href="#"
-                class="text-yellow-400 font-semibold mt-3 inline-block hover:text-yellow-300 transition-colors"
-              >
-                Saber más >
+              <a href="https://github.com/Rene-SandovalL/Sistema-gimnasio" target="_blank" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition" data-i18n-key="projects.codeBtn">
+                Código
               </a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="relative pl-8 md:pl-10">
-          <div
-            class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"
-          ></div>
-
-          <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
-            <div class="md:col-span-1">
-              <h3 class="text-lg md:text-xl font-semibold text-yellow-400">
-                Principal Frontend Engineer
-              </h3>
-              <p class="text-gray-300">Adevinta Spain</p>
-              <p class="text-sm text-gray-400">Septiembre 2022</p>
+        <article class="md:flex md:items-center md:space-x-10 group animate-on-scroll">
+          <div class="md:w-1/2 overflow-hidden rounded-2xl">
+            <img
+              src="images/optiruta.png"
+              alt="Vista previa del proyecto 2"
+              class="rounded-2xl shadow-lg w-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+            />
+          </div>
+          <div class="mt-6 md:mt-0 md:w-1/2">
+            <h3 class="text-3xl font-semibold mb-3" data-i18n-key="projects.p2.title">Optiruta</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">Figma</span>
             </div>
+            <p class="text-gray-300 mb-5" data-i18n-key="projects.p2.bio">
+              Prototipo desarrollado en Figma, para poner en práctica el
+              desarrollo de interfaces limpias e intuitivas, con componentes
+              reutilizables para asegurar una excelente experiencia UX/UI.
+            </p>
+            <div class="flex gap-4">
+              <a href="https://www.figma.com/proto/kKj13GrPX3v2gLKndEcdAR/OptiRuta?node-id=1769-14405&p=f&t=6kq4CzlQoNPnjYZ5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1769%3A14405" target="_blank" class="bg-[#111827] px-4 py-2 rounded-lg hover:bg-[#1f2937] transition" data-i18n-key="projects.previewBtn">
+                🔗 Preview
+              </a>
+            </div>
+          </div>
+        </article>
 
-            <div class="md:col-span-2">
-              <p class="text-gray-300 leading-relaxed">
-                Responsable de la plataforma, componentes y utilidades para la
-                creación y desarrollo de aplicaciones web. Mejora de un 30% en la
-                entrega de software. Implantación de medidas de integración
-                continua y despliegue con A/B testing en más de 15 equipos.
-              </p>
+        <article class="md:flex md:items-center md:space-x-10 group animate-on-scroll">
+          <div class="md:w-1/2 overflow-hidden rounded-2xl">
+            <img
+              src="images/paginaSemantica.png"
+              alt="Vista previa del proyecto 3"
+              class="rounded-2xl shadow-lg w-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+            />
+          </div>
+          <div class="mt-6 md:mt-0 md:w-1/2">
+            <h3 class="text-3xl font-semibold mb-3" data-i18n-key="projects.p3.title">
+              Página semántica - Lenguajes y autómatas
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">HTML</span>
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">CSS</span>
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">JavaScript</span>
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm">Bootstrap</span>
+            </div>
+            <p class="text-gray-300 mb-5" data-i18n-key="projects.p3.bio">
+              Sitio web informativo que aplica etiquetas HTML semánticas y un
+              diseño responsivo para que sea visible en cualquier dispositivo.
+            </p>
+            <div class="flex gap-4">
+              <a href="https://scintillating-kringle-4a44a9.netlify.app/" target="_blank" class="bg-[#111827] px-4 py-2 rounded-lg hover:bg-[#1f2937] transition" data-i18n-key="projects.previewBtn">
+                🔗 Preview
+              </a>
+              <a href="https://github.com/Rene-SandovalL/Frontend-web-basico" target="_blank" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition" data-i18n-key="projects.codeBtn">
+                Código
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="logros" class="text-gray-200 p-8 md:p-12 font-sans animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold flex items-center mb-10 md:mb-12" data-i18n-key="education.title">
+        Educación
+      </h2>
+
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold text-white mb-8 ml-3" data-i18n-key="education.academic.title">Académica</h3>
+        <div class="relative border-l-2 border-gray-700 ml-3">
+          <div class="relative pl-8 md:pl-10">
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"></div>
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
+              <div class="md:col-span-1">
+                <h4 class="text-lg md:text-xl font-semibold text-yellow-400" data-i18n-key="education.academic.uni.title">
+                  Universidad Politécnica de Sinaloa
+                </h4>
+                <p class="text-gray-300" data-i18n-key="education.academic.uni.date">2023 - Actualmente</p>
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-gray-300 leading-relaxed" data-i18n-key="education.academic.uni.bio">
+                  Cursando el séptimo cuatrimestre de la carrera de Ingeniería en Tecnologías de la
+                  Información, especializándome en el desarrollo de software,
+                  arquitecturas web y administración de sistemas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold text-white mb-8 ml-3" data-i18n-key="education.certs.title">
+          Certificaciones
+        </h3>
+        <div class="relative border-l-2 border-gray-700 ml-3">
+          
+          <div class="mb-12 relative pl-8 md:pl-10">
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"></div>
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
+              <div class="md:col-span-1">
+                <h4 class="text-lg md:text-xl font-semibold text-yellow-400" data-i18n-key="education.certs.c1.title">
+                  IT Essentials
+                </h4>
+                <p class="text-gray-300">Cisco Networking Academy</p>
+                <p class="text-sm text-gray-400" data-i18n-key="education.certs.c1.date">Agosto 2024</p>
+                <img
+                  src="images/it-essentials.png"
+                  alt="Certificación IT Essentials de Cisco"
+                  class="w-32 h-32 rounded-lg mt-4 shadow-lg object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-gray-300 leading-relaxed" data-i18n-key="education.certs.c1.bio">
+                  Certificación sobre los fundamentos de hardware, software,
+                  redes, ciberseguridad y resolución de problemas en entornos de
+                  TI.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-12 relative pl-8 md:pl-10">
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"></div>
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
+              <div class="md:col-span-1">
+                <h4 class="text-lg md:text-xl font-semibold text-yellow-400" data-i18n-key="education.certs.c2.title">
+                  Programador en C#
+                </h4>
+                <p class="text-gray-300" data-i18n-key="education.certs.c2.issuer">Capacítate para el empleo</p>
+                <p class="text-sm text-gray-400" data-i18n-key="education.certs.c2.date">Septiembre 2022</p>
+                <img
+                  src="images/Csharp_qr.png"
+                  alt="Certificacion capacitate para el empleo C#"
+                  class="w-32 h-32 rounded-lg mt-4 shadow-lg object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-gray-300 leading-relaxed" data-i18n-key="education.certs.c2.bio">
+                  Curso enfocado en los fundamentos del lenguaje C# y el
+                  framework .NET para la creación de aplicaciones de escritorio
+                  y backend.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-10">
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"></div>
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
+              <div class="md:col-span-1">
+                <h4 class="text-lg md:text-xl font-semibold text-yellow-400" data-i18n-key="education.certs.c3.title">
+                  CCNA: Introduction to networks
+                </h4>
+                <p class="text-gray-300">Cisco networking academy</p>
+                <p class="text-sm text-gray-400" data-i18n-key="education.certs.c3.date">Agosto 2024</p>
+                <img
+                  src="images/ccna-introduction-to-networks.png"
+                  alt="Certificación CCNA de Cisco"
+                  class="w-32 h-32 rounded-lg mt-4 shadow-lg object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-gray-300 leading-relaxed" data-i18n-key="education.certs.c3.bio">
+                  Certificación introductoria a CCNA, para la administración, enrutamiento e interconexión de redes
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold text-white mb-8 ml-3" data-i18n-key="education.ongoing.title">En Curso</h3>
+        <div class="relative border-l-2 border-gray-700 ml-3">
+          <div class="relative pl-8 md:pl-10">
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full -left-[7px] top-1"></div>
+            <div class="grid md:grid-cols-3 gap-x-8 gap-y-2">
+              <div class="md:col-span-1">
+                <h4 class="text-lg md:text-xl font-semibold text-yellow-400">
+                  <a href="#" class="hover:underline" data-i18n-key="education.ongoing.c1.title">
+                    The Complete 2024 Web Development Bootcamp
+                  </a>
+                </h4>
+                <p class="text-gray-300">Udemy</p>
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-gray-300 leading-relaxed" data-i18n-key="education.ongoing.c1.bio">
+                  Aprendiendo tecnologías full-stack modernas, incluyendo
+                  Node.js, React, MongoDB y Express.js para crear aplicaciones
+                  web completas.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="flex justify-center items-center py-16">
+    
+    <section class="flex justify-center items-center py-16 animate-on-scroll">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full px-6">
-        <div
-          class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800"
-        >
-          <h2 class="text-2xl font-bold text-cyan-400 mb-4 text-center">
+        <div class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-4 text-center" data-i18n-key="skills.frontend">
             Frontend
           </h2>
           <div class="grid grid-cols-3 gap-4 place-items-center text-center">
-            <div>
-              <img src="images/html5.svg" alt="HTML" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">HTML</p>
-            </div>
-            <div>
-              <img src="images/css.svg" alt="CSS" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">CSS</p>
-            </div>
-            <div>
-              <img
-                src="images/javascript.svg"
-                alt="JavaScript"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">JavaScript</p>
-            </div>
-            <div>
-              <img
-                src="images/react_light.svg"
-                alt="React"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">React</p>
-            </div>
-            <div>
-              <img
-                src="images/tailwindcss.svg"
-                alt="TailwindCSS"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">TailwindCSS</p>
-            </div>
-            <div>
-              <img
-                src="images/bootstrap.svg"
-                alt="Bootstrap"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">Bootstrap</p>
-            </div>
-            <div>
-              <img src="images/figma.svg" alt="Figma" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Figma</p>
-            </div>
+            <div><img src="images/html5.svg" alt="HTML" class="w-12 mx-auto" /><p class="text-sm mt-1">HTML</p></div>
+            <div><img src="images/css.svg" alt="CSS" class="w-12 mx-auto" /><p class="text-sm mt-1">CSS</p></div>
+            <div><img src="images/javascript.svg" alt="JavaScript" class="w-12 mx-auto"/><p class="text-sm mt-1">JavaScript</p></div>
+            <div><img src="images/react_light.svg" alt="React" class="w-12 mx-auto" /><p class="text-sm mt-1">React</p></div>
+            <div><img src="images/tailwindcss.svg" alt="TailwindCSS" class="w-12 mx-auto" /><p class="text-sm mt-1">TailwindCSS</p></div>
+            <div><img src="images/bootstrap.svg" alt="Bootstrap" class="w-12 mx-auto" /><p class="text-sm mt-1">Bootstrap</p></div>
+            <div><img src="images/figma.svg" alt="Figma" class="w-12 mx-auto" /><p class="text-sm mt-1">Figma</p></div>
           </div>
         </div>
-
-        <div
-          class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800"
-        >
-          <h2 class="text-2xl font-bold text-green-400 mb-4 text-center">
+        <div class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800">
+          <h2 class="text-2xl font-bold text-green-400 mb-4 text-center" data-i18n-key="skills.backend">
             Backend
           </h2>
           <div class="grid grid-cols-3 gap-4 place-items-center text-center">
-            <div>
-              <img src="images/java.svg" alt="Java" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Java</p>
-            </div>
-            <div>
-              <img
-                src="images/mysql-icon-light.svg"
-                alt="MySQL"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">MySQL</p>
-            </div>
-            <div>
-              <img
-                src="images/sql-server.svg"
-                alt="SQL Server"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">SQL Server</p>
-            </div>
+            <div><img src="images/java.svg" alt="Java" class="w-12 mx-auto" /><p class="text-sm mt-1">Java</p></div>
+            <div><img src="images/mysql-icon-light.svg" alt="MySQL" class="w-12 mx-auto" /><p class="text-sm mt-1">MySQL</p></div>
+            <div><img src="images/sql-server.svg" alt="SQL Server" class="w-12 mx-auto" /><p class="text-sm mt-1">SQL Server</p></div>
+            <div><img src="images/csharp.svg" alt="C#" class="w-12 mx-auto" /><p class="text-sm mt-1">C#</p></div>
+            <div><img src="images/dotnet.svg" alt=".NET" class="w-12 mx-auto" /><p class="text-sm mt-1">.NET</p></div>
           </div>
         </div>
-
-        <div
-          class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800"
-        >
-          <h2 class="text-2xl font-bold text-orange-400 mb-4 text-center">
+        <div class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800">
+          <h2 class="text-2xl font-bold text-orange-400 mb-4 text-center" data-i18n-key="skills.interests">
             Intereses
           </h2>
           <div class="grid grid-cols-3 gap-4 place-items-center text-center">
-            <div>
-              <img src="images/nodejs.svg" alt="Python" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Noje.js</p>
-            </div>
-            <div>
-              <img
-                src="images/expressjs_dark.svg "
-                alt="Astro"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">Expressjs</p>
-            </div>
-            <div>
-              <img src="images/docker.svg" alt="Docker" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Docker</p>
-            </div>
-            <div>
-              <img
-                src="images/typescript.svg"
-                alt="TypeScript"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">TypeScript</p>
-            </div>
+            <div><img src="images/nodejs.svg" alt="Node.js" class="w-12 mx-auto" /><p class="text-sm mt-1">Node.js</p></div>
+            <div><img src="images/expressjs_dark.svg" alt="Express.js" class="w-12 mx-auto" /><p class="text-sm mt-1">Express.js</p></div>
+            <div><img src="images/docker.svg" alt="Docker" class="w-12 mx-auto" /><p class="text-sm mt-1">Docker</p></div>
+            <div><img src="images/typescript.svg" alt="TypeScript" class="w-12 mx-auto" /><p class="text-sm mt-1">TypeScript</p></div>
           </div>
         </div>
-
-        <div
-          class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800"
-        >
-          <h2 class="text-2xl font-bold text-blue-400 mb-4 text-center">
+        <div class="bg-[#111827] p-6 rounded-2xl shadow-lg border border-gray-800">
+          <h2 class="text-2xl font-bold text-blue-400 mb-4 text-center" data-i18n-key="skills.tools">
             Herramientas
           </h2>
           <div class="grid grid-cols-3 gap-4 place-items-center text-center">
-            <div>
-              <img src="images/git.svg" alt="Git" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Git</p>
-            </div>
-            <div>
-              <img
-                src="images/github_dark.svg"
-                alt="GitHub"
-                class="w-12 mx-auto"
-              />
-              <p class="text-sm mt-1">GitHub</p>
-            </div>
-            <div>
-              <img src="images/linux.svg" alt="Linux" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">Linux</p>
-            </div>
-            <div>
-              <img src="images/vscode.svg" alt="VSCode" class="w-12 mx-auto" />
-              <p class="text-sm mt-1">VSCode</p>
-            </div>
+            <div><img src="images/git.svg" alt="Git" class="w-12 mx-auto" /><p class="text-sm mt-1">Git</p></div>
+            <div><img src="images/github_dark.svg" alt="GitHub" class="w-12 mx-auto" /><p class="text-sm mt-1">GitHub</p></div>
+            <div><img src="images/linux.svg" alt="Linux" class="w-12 mx-auto" /><p class="text-sm mt-1">Linux</p></div>
+            <div><img src="images/vscode.svg" alt="VSCode" class="w-12 mx-auto" /><p class="text-sm mt-1">VSCode</p></div>
           </div>
         </div>
       </div>
     </section>
-
-    <footer class="text-center text-gray-500 py-5 border-t border-gray-800">
-      © 2025 Shalking. Hecho con amor.
+    
+    <footer id="contacto" class="p-4 sm:p-6 bg-gray-900"> <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-white uppercase" data-i18n-key="footer.col1.title">
+                Hecho con
+              </h2>
+              <ul class="text-gray-400">
+                <li class="mb-4"><a href="https://developer.mozilla.org/es/docs/Web/HTML" class="hover:underline" target="_blank">HTML</a></li>
+                <li class="mb-4"><a href="https://tailwindcss.com/" class="hover:underline" target="_blank">Tailwind CSS</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" class="hover:underline" target="_blank">JavaScript</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-white uppercase" data-i18n-key="footer.col2.title">
+                Contáctame
+              </h2>
+              <ul class="text-gray-400">
+                <li class="mb-4">renefs127@gmail.com</li>
+                <li>+52 6692475439</li>
+              </ul>
+            </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" data-i18n-key="footer.copyright">
+            © 2025 Rene Sandoval. Hecho con amor.
+          </span>
+          <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <a href="https://www.instagram.com/shalkingod/" class="text-gray-500 hover:text-white">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="https://github.com/Rene-SandovalL" class="text-gray-500 hover:text-white" target="_blank">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/rene-sandoval-767a05273" class="text-gray-500 hover:text-white" target="_blank">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path fill-rule="evenodd" d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script

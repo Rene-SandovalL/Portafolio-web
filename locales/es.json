@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Portafolio | René Sandoval"
+  },
+  "navbar": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador Web",
+    "bio": "Estudiante de ingeniería en tecnologías de la información. Especializado en el desarrollo web fullstack, apasionado por el aprendizaje y enfocado en la búsqueda de soluciones tecnológicas.",
+    "cv": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Soy estudiante de Ingeniería en Tecnologías de la Información, con una sólida orientación al desarrollo de software y la mejora continua. Me caracterizo por ser una persona proactiva, con pasión por el aprendizaje y compromiso con la excelencia en cada proyecto. Poseo experiencia en el diseño y desarrollo de sistemas e interfaces, aplicando metodologías de ingeniería de software para garantizar soluciones eficientes y de calidad."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "codeBtn": "Código",
+    "previewBtn": "🔗 Preview",
+    "p1": {
+      "title": "BlueShark - Sistema de gestión de gimnasio",
+      "bio": "Sistema completo para la administración de clientes, membresías, pagos y asistencias en un gimnasio. Incluye análisis de datos y control de inventario."
+    },
+    "p2": {
+      "title": "Optiruta",
+      "bio": "Prototipo desarrollado en Figma, para poner en práctica el desarrollo de interfaces limpias e intuitivas, con componentes reutilizables para asegurar una excelente experiencia UX/UI."
+    },
+    "p3": {
+      "title": "Página semántica - Lenguajes y autómatas",
+      "bio": "Sitio web informativo que aplica etiquetas HTML semánticas y un diseño responsivo para que sea visible en cualquier dispositivo."
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "academic": {
+      "title": "Académica",
+      "uni": {
+        "title": "Universidad Politécnica de Sinaloa",
+        "date": "2023 - Actualmente",
+        "bio": "Cursando el séptimo cuatrimestre de la carrera de Ingeniería en Tecnologías de la Información, especializándome en el desarrollo de software, arquitecturas web y administración de sistemas."
+      }
+    },
+    "certs": {
+      "title": "Certificaciones",
+      "c1": {
+        "title": "IT Essentials",
+        "date": "Agosto 2024",
+        "bio": "Certificación sobre los fundamentos de hardware, software, redes, ciberseguridad y resolución de problemas en entornos de TI."
+      },
+      "c2": {
+        "title": "Programador en C#",
+        "issuer": "Capacítate para el empleo",
+        "date": "Septiembre 2022",
+        "bio": "Curso enfocado en los fundamentos del lenguaje C# y el framework .NET para la creación de aplicaciones de escritorio y backend."
+      },
+      "c3": {
+        "title": "CCNA: Introduction to networks",
+        "date": "Agosto 2024",
+        "bio": "Certificación introductoria a CCNA, para la administración, enrutamiento e interconexión de redes."
+      }
+    },
+    "ongoing": {
+      "title": "En Curso",
+      "c1": {
+        "title": "The Complete 2024 Web Development Bootcamp",
+        "bio": "Aprendiendo tecnologías full-stack modernas, incluyendo Node.js, React, MongoDB y Express.js para crear aplicaciones web completas."
+      }
+    }
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "interests": "Intereses",
+    "tools": "Herramientas"
+  },
+  "footer": {
+    "col1": {
+      "title": "Hecho con"
+    },
+    "col2": {
+      "title": "Contáctame"
+    },
+    "copyright": "© 2025 Rene Sandoval. Hecho con amor."
+  }
+}

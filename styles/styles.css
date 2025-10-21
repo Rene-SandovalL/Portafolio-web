@@ -3,7 +3,6 @@
   overflow: hidden;
   z-index: 1;
 }
-
 .hero-animated-bg::before {
   content: "";
   position: absolute;
@@ -34,4 +33,16 @@
   100% {
     background-position: 100% 100%;
   }
+}
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
