@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio | Shalking</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body
     class="bg-gradient-to-r from-[#0a0a1a] via-[#0c0c24] to-[#0e0e2e] text-white min-h-screen"
   >
     <header
-      class="flex justify-between items-center px-10 py-5 border-b border-gray-800"
+      class="sticky top-0 z-50 flex justify-between items-center px-6 md:px-10 py-5 border-b border-gray-800 bg-[#0a0a1a]/80 backdrop-blur-md"
     >
       <h1 class="text-2xl font-semibold tracking-wide">&lt;Shalking.Dev&gt;</h1>
-      <nav class="space-x-8 text-gray-300">
+      
+      <nav class="hidden md:flex space-x-8 text-gray-300">
         <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
         <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
         <a href="#logros" class="hover:text-white transition">Educación</a>
         <a href="#contacto" class="hover:text-white transition">Contacto</a>
       </nav>
+
+      <button id="menu-btn" class="md:hidden z-50 text-gray-300 hover:text-white" onclick="toggleMenu()">
+        <svg id="icon-hamburger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 hidden">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </header>
+
+    <div 
+      id="mobile-menu" 
+      class="fixed top-0 right-0 z-40 w-64 h-full bg-[#0c0c24] border-l border-gray-800 shadow-lg
+             transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+      <nav class="flex flex-col p-8 pt-24 space-y-6">
+        <a href="#sobre-mi" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Sobre mí</a>
+        <a href="#proyectos" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Proyectos</a>
+        <a href="#logros" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Educación</a>
+        <a href="#contacto" class="text-gray-300 hover:text-white transition text-lg" onclick="toggleMenu()">Contacto</a>
+      </nav>
+    </div>
+
+    <div id="menu-overlay" class="fixed inset-0 z-30 bg-black/60 hidden" onclick="toggleMenu()"></div>
+
 
     <section
       class="hero-animated-bg flex flex-col justify-center items-center px-10 md:px-20 py-32"
     >
       <div class="hero-content max-w-xl text-center">
-        <h2 class="text-3xl text-yellow-400 font-semibold">Hola, soy</h2>
-        <h1 class="text-6xl font-extrabold mt-2">René Sandoval</h1>
-        <h3 class="text-5xl text-yellow-500 font-semibold mt-2 ">
+        <h2 class="text-2xl md:text-3xl text-yellow-400 font-semibold">Hola, soy</h2>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-2">René Sandoval</h1>
+        <h3 class="text-2xl sm:text-4xl md:text-5xl text-yellow-500 font-semibold mt-2">
           Desarrollador Web
         </h3>
 
@@ -65,21 +91,22 @@
           </div>
         </div>
       </div>
+    </section>
 
-      </section>
-
-    <section id="proyectos" class=" text-white py-20 px-6 md:px-20">
-      <h2 class="text-4xl font-bold mb-12 flex items-center">
+    <section id="proyectos" class="text-white py-20 px-6 md:px-20">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center">
         <span class="mr-2"></span> Proyectos
       </h2>
 
       <article class="space-y-20">
         <div class="md:flex md:items-center md:space-x-10">
-          <img
-            src="images/blueshark.png"
-            alt="Vista previa del proyecto 1"
-            class="rounded-2xl shadow-lg w-full md:w-1/2"
-          />
+          <div class="md:w-1/2">
+            <img
+              src="images/blueshark.png"
+              alt="Vista previa del proyecto 1"
+              class="rounded-2xl shadow-lg w-full"
+            />
+          </div>
           <div class="mt-6 md:mt-0 md:w-1/2">
             <h3 class="text-2xl font-semibold mb-3">
               GymFit - Sistema de gestión de gimnasio
@@ -99,6 +126,79 @@
               Sistema completo para la administración de clientes, membresías,
               pagos y asistencias en un gimnasio. Incluye análisis de datos y
               control de inventario.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                target="_blank"
+                class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >Código</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="md:flex md:items-center md:space-x-10">
+          <div class="md:w-1/2">
+            <img
+              src="images/blueshark.png"
+              alt="Vista previa del proyecto 2"
+              class="rounded-2xl shadow-lg w-full"
+            />
+          </div>
+          <div class="mt-6 md:mt-0 md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-3">
+              Proyecto 2 (Cambiar Título)
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
+                >Tecnología 1</span
+              >
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
+                >Tecnología 2</span
+              >
+            </div>
+            <p class="text-gray-300 mb-5">
+              Descripción del segundo proyecto. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                target="_blank"
+                class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >Código</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="md:flex md:items-center md:space-x-10">
+          <div class="md:w-1/2">
+            <img
+              src="images/blueshark.png"
+              alt="Vista previa del proyecto 3"
+              class="rounded-2xl shadow-lg w-full"
+            />
+          </div>
+          <div class="mt-6 md:mt-0 md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-3">
+              Proyecto 3 (Cambiar Título)
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
+                >Tecnología 1</span
+              >
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
+                >Tecnología 2</span
+              >
+              <span class="bg-[#111827] px-3 py-1 rounded-lg text-sm"
+                >Tecnología 3</span
+              >
+            </div>
+            <p class="text-gray-300 mb-5">
+              Descripción del tercer proyecto. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
             </p>
             <div class="flex gap-4">
               <a
@@ -329,12 +429,14 @@
     </section>
 
     <footer class="text-center text-gray-500 py-5 border-t border-gray-800">
-      © 2025 Shalking. Todas las pollas reservadas.
+      © 2025 Shalking. Hecho con amor.
     </footer>
 
     <script
       src="https://kit.fontawesome.com/a2e0e6b5c5.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
